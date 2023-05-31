@@ -1,0 +1,38 @@
+	body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-dark {
+            background-color: #343a40;
+        }
+
+        .bg-dark {
+            background-color: #343a40;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .btn-outline-dark {
+            color: #343a40;
+            border-color: #343a40;
+        }
+
+        .btn-outline-light {
+            color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
+
+        .btn-outline-secondary {
+            color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .border {
+            border-color: #dee2e6 !important;
+        }
+
+        .text-dark {
+            color: #343a40 !important;
+        }
