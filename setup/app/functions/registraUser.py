@@ -59,7 +59,7 @@ print(f"El valor del vector_user es --> {vector_user}")
 print(f"El valor del vector_pass es --> {vector_pass}")
 print(convertir_vector_a_string(vector_user))
 
-ruta_users = f"/home/javier/scripts_pruebas/users/{convertir_vector_a_string(vector_user)}"
+ruta_users = f"/var/www/html/users/{convertir_vector_a_string(vector_user)}"
 
 if (verificar_archivo(ruta_users)):
     print("Lo siento, este nombre de usuario ya ha sido elegido, pruebe otro...")
@@ -85,8 +85,8 @@ if (verificar_archivo(ruta_users)):
     is_correct = HE.sub(pass_input_strip_cipher, potential_user)
 
     if all(HE.decryptInt(is_correct) == 0):
-        print("Las contraseñas coinciden suwi")
+        print("Las contraseñas coinciden")
     else:
-        print("Mu mal")
+        print("Las contraseñas no coinciden")
 else:
     print("El usuario no esta registrado...")
