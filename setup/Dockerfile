@@ -9,10 +9,13 @@ RUN apt update && \
     apt install -y git && \
     apt install -y nano && \
     pip3 install flask Pyfhel && \
+    pip3 install pymysql && \
+    pip3 install cryptography && \
     apt clean && \
     apt install -y sudo && \
     apt install -y net-tools && \
     apt install -y libapache2-mod-wsgi-py3 && \
+    apt install -y telnet && \
     rm -rf /var/lib/apt/lists/*
 
 EXPOSE 80
@@ -38,7 +41,10 @@ COPY app/routes/ /var/www/html/routes/
 COPY app/users/ /var/www/html/users/
 COPY certificate/certificate.crt /etc/apache2/certificate/
 COPY certificate/private.key /etc/apache2/certificate/
+COPY app/create_table.py /home/tfm/
 
+#RUN chmod +x setup_sites.sh && setup_sites.sh
+#RUN python3 create_table.py
 # Establecer el directorio de trabajo como el directorio principal del usuario
 WORKDIR /home/tfm
 

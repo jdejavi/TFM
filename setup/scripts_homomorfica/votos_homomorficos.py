@@ -39,7 +39,7 @@ for i in range(10):  # Acepta 10 votos
     # Ciframos el voto y lo sumamos al recuento
 #    votos_cifrados[voto] += HE.encryptInt(np.array([1], dtype=np.int64))
     votos_cifrados[voto] = votos_cifrados[voto] + HE.encryptInt(np.array([1], dtype=np.int64))
-
+    print(HE.encryptInt(np.array([1], dtype=np.int64)))
 #    HE.encryptInt(1).add(votos_cifrados[voto])
 
 # Desciframos los votos
