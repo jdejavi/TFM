@@ -30,9 +30,6 @@ CREATE TABLE usuarios(
     mail VARCHAR(150) NOT NULL,
     nickname VARCHAR(150) NOT NULL,
     passwd VARCHAR(150) NOT NULL,
-    puntuacion BIGINT NOT NULL,
-    confirmed VARCHAR(10) NOT NULL
-);
     )
 '''
 cursor.execute(sql_crear_tabla)

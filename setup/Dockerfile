@@ -38,7 +38,6 @@ COPY app/static/ /var/www/html/static/
 COPY app/templates/ /var/www/html/templates/
 COPY app/functions/ /var/www/html/functions/
 COPY app/routes/ /var/www/html/routes/
-COPY app/users/ /var/www/html/users/
 COPY certificate/certificate.crt /etc/apache2/certificate/
 COPY certificate/private.key /etc/apache2/certificate/
 COPY app/create_table.py /home/tfm/
