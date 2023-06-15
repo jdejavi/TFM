@@ -1,6 +1,6 @@
 from flask import request
 import os
-
+from functions.controlador_db import *
 def mapear_letras(texto):
     numeros = [ord(caracter) for caracter in texto]
     return numeros
@@ -9,6 +9,13 @@ def mapear_enteros(vector_enteros):
     letras = [chr(entero) for entero in vector_enteros if 0 <= entero <= 127]
     return ''.join(letras)
 
+def compruebaCookie():
+    '''if(email is None): return False'''
+    prueba = request.cookies.get('cookie_key')
+    email = request.cookies.get('email_user')
+    
+    if(comprueba_user(prueba,email)): return True
+    else: return False
 
 '''def compruebaCookie():
     if(email is None): return False

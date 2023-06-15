@@ -1,6 +1,6 @@
 from flask import Flask, render_template, Blueprint
 
-from routes.routes1 import routes1
+from functions.routes1 import routes1
 
 app = Flask(__name__)
 

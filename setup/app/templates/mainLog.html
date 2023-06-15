@@ -1,23 +1,26 @@
-{% extends "layoutNoLog.html" %}
+{% extends "layoutLog.html" %}
 
 {% block content%}
-<div class="bg-light">
+<div style="background-color: #BBDFCD;">
   <div class="container py-4" >
-    <header class="pb-3 mb-4 border-bottom">
+    <header class="pb-3 mb-4 border-bottom" style="border-color: black; border-width: 1px;">
       <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <img src="/static/logo.png" width="50" height="50">
-        <span class="fs-4"><h1 class="align-items-center">¡Bienvenido a HomomorfismoParaTodos!</h1></span>  
+      <img src="/static/logo3.png" width="432" height="205" class="mx-auto d-block">
       </a>
     </header>
 
-    <div class="p-5 mb-4 bg-light rounded-3 row display-5 d-flex">
+    <div class="p-5 mb-4 rounded-3 row display-5 d-flex" style="background-color: #C7E5D4; ">
       <div class="container-fluid py-3" style="float: left;">
-        <h1 class="display-5 fw-bold">¡Bienvenido!</h1>
-        <p class="col-md-18 fs-4">Esta es una página dedicada al aprendizaje de la criptografía homomórfica, sus aplicaciones en la criptografía, en la vida cotidiana... Aunque parezca que no, es muy utilizada hoy en día.</p>
-        <p class="col-md-8 fs-4">En esta página aprenderemos:</p>
+	<div class="d-flex align-items-center justify-content-center">
+  		<h1 class="display-5 fw-bold">¡Saludos!</h1>
+	</div>
+	<p class="col-md-12 fs-4 text-center">
+	 ¡Explora el fascinante mundo de la criptografía homomórfica y sus aplicaciones en la vida cotidiana! Descubre cómo esta poderosa técnica de cifrado protege tus datos mientras preserva la privacidad. Acompáñanos en este viaje de conocimiento y aprendizaje.
+	</p>
+        <p class="col-md-8 fs-4">Contenidos de esta página:</p>
         <p class="col-md-8 fs-4">&nbsp&nbsp&nbsp&nbsp Qué es la criptografía homomórfica</p>
         <p class="col-md-8 fs-4">&nbsp&nbsp&nbsp&nbsp Para qué sirve la criptografía homomórfica</p>
-        <p class="col-md-8 fs-4">&nbsp&nbsp&nbsp&nbsp Dónde y cómo se utiliza</p>
+        <p class="col-md-8 fs-4">&nbsp&nbsp&nbsp&nbsp Base matemática</p>
         <p class="col-md-8 fs-4">&nbsp&nbsp&nbsp&nbsp Aplicaciones interesantes de la criptografía homomórfica</p>
         <p class="col-md-8 fs-5"></p>
         <a href="/register"><button class="btn btn-outline-dark btn-lg" type="button">¡Regístrate!</button></a>
@@ -44,3 +47,5 @@
   </div>
 </div>
 {% endblock %}
+
+

@@ -37,11 +37,10 @@ COPY sites/default-ssl.conf /etc/apache2/sites-available/
 COPY app/static/ /var/www/html/static/
 COPY app/templates/ /var/www/html/templates/
 COPY app/functions/ /var/www/html/functions/
-COPY app/routes/ /var/www/html/routes/
 COPY certificate/certificate.crt /etc/apache2/certificate/
 COPY certificate/private.key /etc/apache2/certificate/
 COPY app/create_table.py /home/tfm/
-
+COPY app/do_all.sh /home/tfm/
 #RUN chmod +x setup_sites.sh && setup_sites.sh
 #RUN python3 create_table.py
 # Establecer el directorio de trabajo como el directorio principal del usuario

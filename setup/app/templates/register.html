@@ -18,12 +18,22 @@
                             <p class="text-white mb-3 text-muted">Introduce tus datos para acceder a todas las características de la pagina</p>
 
                             <form action='/register' class="form-white mb-4" method="POST">
-                                <p class="text-muted mb-0" style="text-align: left;">Nombre de usuario</p> 
-                                <input type="name" name="inputName" class="form-control form-control-lg mb-3" placeholder="Introduce el nombre de tu cuenta"/>
-                                <p class="text-muted mb-0" style="text-align: left;">Correo electronico</p> 
+                                
+                                <p class="text-muted" style="text-align: left;">Nombre</p> 
+                                <input type="name" name="inputName" class="form-control form-control-lg mb-3" placeholder="Introduce el nombre"/>
+
+                                <p class="text-muted" style="text-align: left;">Apellidos</p> 
+                                <input type="name" name="inputSurnames" class="form-control form-control-lg mb-3" placeholder="Introduce los apellidos"/>
+
+                                <p class="text-muted" style="text-align: left;">Correo electronico</p> 
                                 <input type="email" name="inputEmail" class="form-control form-control-lg mb-3" placeholder="Introduce el correo electronico"/>
-                                <p class="text-muted mb-0" style="text-align: left;">Contraseña</p>
+
+                                <p class="text-muted" style="text-align: left;">Nombre de cuenta</p> 
+                                <input type="text" name="inputNick" class="form-control form-control-lg mb-3" placeholder="Introduce tu nickname"/>
+
+                                <p class="text-muted" style="text-align: left;">Contraseña</p>
                                 <input type="password" name="inputPwd" class="form-control form-control-lg mb-3" placeholder="Introduce la contraseña"/>
+
                                 <button class="btn btn-success mt-3" style="width: 80%; border:none ;border-radius: 10px; background-color: #2B5F4A ;" type="submit">¡Regístrate!</button>
                             </form>
                     </div>
