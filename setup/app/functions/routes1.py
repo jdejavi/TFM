@@ -55,6 +55,6 @@ def login():
 @routes1.route('/logged/home', methods=["GET","POST"])
 def logged():
     if(compruebaCookie()):
-        return render_template('mainLog.html')
+        return render_template('indexLog.html')
     else:
         return redirect('/login')

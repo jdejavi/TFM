@@ -9,7 +9,7 @@ app.register_blueprint(routes1, url_prefix='/')
 
 @app.route('/')
 def home():
-    return render_template('main.html')
+    return render_template('indexNoLog.html')
 
 if __name__ == '__main__':
     app.run()
