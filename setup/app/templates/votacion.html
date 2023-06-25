@@ -41,11 +41,12 @@
               <div class="collapse navbar-collapse justify-content-end " style=" margin-right: 100px;" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   
-                  <a class="nav-link" href="#QueEs"> ¿Qué es? |</a>
-                  <a class="nav-link" href="#">¿Para qué sirve? |</a>
-                  <a class="nav-link" href="#">Base matemática |</a>
-                  <a class="nav-link" href="#">Aplicaciones |</a>
-                  <a href="/register"><button class="btn btn-outline-primary" type="button">¡Regístrate!</button></a>
+                  <a class="nav-link" href="#QueEs"> ¿Qué es? </a>
+                  <a class="nav-link" href="#">¿Para qué sirve? </a>
+                  <a class="nav-link" href="#">Base matemática </a>
+                  <a class="nav-link" href="#">Aplicaciones </a>
+                  <a class="nav-link" href="/votaciones">Votaciones </a>
+                  <a class="nav-link" href="#">Cerrar sesión </a>
                 </div>
               </div>
             </div>
@@ -61,7 +62,7 @@
                         <div class="card-body">
                           <h5 class="card-title">¿Qué es?</h5>
                           <p class="card-text">En este apartado aprendiste, que es la criptografía homomórfica.</p>
-                          <a href="#" class="btn btn-success">¡ Votar !</a>
+                          <a href="#" id="voto_que_es" class="btn btn-success">¡ Votar !</a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +72,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Base matemática</h5>
                           <p class="card-text">En este apartado aprendiste, sobre los fundamentos Matemáticos en algunos sistemas de cifrado homomórficos.</p>
-                          <a href="#" class="btn btn-success">¡ Votar !</a>
+                          <a href="#" id="voto_base_matematica" class="btn btn-success">¡ Votar !</a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +82,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Aplicaciones</h5>
                           <p class="card-text">En este apartado aprendiste, Sobre las distintas aplicaciones de la criptografía homomorfica en la vida real.</p>
-                          <a href="#" class="btn btn-success">¡ Votar !</a>
+                          <a href="#" id="voto_aplicaciones" class="btn btn-success">¡ Votar !</a>
                         </div>
                     </div>
                 </div>
@@ -109,3 +110,35 @@
     </body>
  
 </html>
+
+<script>
+  document.getElementById("voto_que_es").addEventListener("click", function() {
+      fetch('https://homomorphicEncrypt.he/votaciones', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({opcion: 'que_es'})
+      });
+  });
+  
+  document.getElementById("voto_base_matematica").addEventListener("click", function() {
+      fetch('https://homomorphicEncrypt.he/votaciones', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({opcion: 'base_matematica'})
+      });
+  });
+  
+  document.getElementById("voto_aplicaciones").addEventListener("click", function() {
+      fetch('https://homomorphicEncrypt.he/votaciones', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({opcion: 'aplicaciones'})
+      });
+  });
+  </script>

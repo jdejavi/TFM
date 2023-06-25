@@ -1,9 +1,9 @@
 from flask import Flask, Blueprint, redirect, make_response, render_template, request
 from functions.functions import *
-import numpy as np
 import os
 import hashlib
 from functions.controlador_db import *
+
 
 routes1 = Blueprint('routes1', __name__)
 
@@ -58,3 +58,23 @@ def logged():
         return render_template('indexLog.html')
     else:
         return redirect('/login')
+    
+@routes1.route('/votaciones', methods=["GET","POST"])
+def votaciones():
+
+    if(compruebaCookie()):
+
+        if request.is_json and 'opcion' in request.json:
+            opcion = request.json['opcion']
+            print(opcion)
+            annade_voto(opcion)
+
+            mail = request.cookies.get('email_user')
+            actualizaEstadoVotante(mail)
+            resultados = get_results()
+            print(f'Recuento de votos --> {resultados}')
+            return redirect('/logged/home')
+        else: 
+            return render_template('votacion.html')
+    else:
+        return render_template('login.html')

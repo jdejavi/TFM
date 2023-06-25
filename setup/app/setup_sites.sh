@@ -1,6 +1,10 @@
 #!/bin/bash
 
-#Script que habilita los sitios del contenedor
+
+############################################################################################
+# Autores: Javier Matilla Martín (aka m4t1) y Juan Camilo Muñoz Salazar			   	     #
+# Script de configuración de Apache para el TFM Criptografía homomórfica, estado del arte  #
+############################################################################################
 
 #Activamos el modulo de wsgi
 sudo a2enmod wsgi

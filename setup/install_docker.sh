@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##########################################################################################
-# Autores: Javier Matilla Martín (aka m4t1) y Juan Camilo Muñoz Salazar			 #
+# Autores: Javier Matilla Martín (aka m4t1) y Juan Camilo Muñoz Salazar			       #
 # Script de instalación de Docker para el TFM Criptografía homomórfica, estado del arte  #
 ##########################################################################################
 

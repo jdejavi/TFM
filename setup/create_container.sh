@@ -1,9 +1,9 @@
 #!/bin/bash
 
-################################################################################
-# Autores: Javier Matilla Martín (aka m4t1) y Juan Camilo Muñoz Salazar
-# Script para crear un contenedor de Docker con los paquetes necesarios
-################################################################################
+#############################################################################################
+# Autores: Javier Matilla Martín (aka m4t1) y Juan Camilo Muñoz Salazar			    	  #
+# Script de creacion de contenedores para el TFM Criptografía homomórfica, estado del arte  #
+#############################################################################################
 
 # Construir la imagen de Docker
 docker build -t web_tfm .
