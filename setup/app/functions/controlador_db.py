@@ -60,6 +60,15 @@ def insertaVariables(nombre,apellidos,email,nickname,passwd):
     if(cursor):
         bytes = passwd.encode()
         hashPwd = hashlib.sha256(bytes)
+        
+        consulta = "SELECT COUNT(*) FROM usuarios WHERE nickname = %s;"
+        cursor.execute(consulta, (nickname,))
+        resultado = cursor.fetchone()
+        if resultado[0] > 0:
+            print("El valor ya existe en la base de datos.")
+            connection.close()
+            return False
+
         insercion = "INSERT INTO usuarios (nombre,apellidos,mail,nickname,haVotado,passwd) VALUES (%s, %s, %s, %s, %s, %s);"
         cursor.execute(insercion,(nombre,apellidos,email,nickname,'NO',hashPwd.hexdigest()))
         connection.commit()
@@ -195,3 +204,24 @@ def actualizaEstadoVotante(mail):
             return True  # Actualización exitosa
         else:
             return False  # No se encontró ninguna fila para actualizar
+        
+def compruebaSiHaVotado(mail):
+    connection = pymysql.connect(host='172.18.0.3',
+                                 user='root',
+                                 password='root',
+                                 db='web_tfm')
+
+    cursor = connection.cursor()
+
+    if cursor:
+        busqueda = "SELECT haVotado from usuarios WHERE mail=%s"
+        cursor.execute(busqueda, (mail,))
+        connection.commit()
+        haVotado = cursor.fetchall()
+        #print(haVotado[0][0])
+        if haVotado[0][0] == 'SI':
+            connection.close()
+            return True
+        else:
+            connection.close()
+            return False

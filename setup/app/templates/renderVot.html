@@ -60,12 +60,14 @@
                     <a class="nav-link" href="#">¿Para qué sirve? </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Base matemática </a>
+                    <a class="nav-link" href="/base_matematica">Base matemática </a>
                   </li>
                   <li>
                     <a class="nav-link" href="#">Aplicaciones </a>
                   </li>
-                  <li><a class="ml-5" href="/register"  ><button class="btn btn-outline-primary" type="button">¡Regístrate!</button></a></li>
+                  <li><a class="nav-link" href="/votaciones">Votaciones </a></li>
+                  <li><a class="nav-link" href="/conteoVotos">Recuento de votos </a></li>
+                  <li><a class="nav-link" href="/logout">Cerrar sesión </a></li>
                 </ul>
                 
               </div>
@@ -85,7 +87,7 @@
                         <div class="card-body">
                           <h5 class="card-title">¿Qué es?</h5>
                           <p class="card-text">En este apartado aprendiste, que es la criptografía homomórfica.</p>
-                          <p  class="btn btn-success">Votos:<strong > El numero</strong> </p>
+                          <p  class="btn btn-success">Votos: <strong >{{votos_que_es}}</strong> </p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +97,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Base matemática</h5>
                           <p class="card-text">En este apartado aprendiste, sobre los fundamentos Matemáticos en algunos sistemas de cifrado homomórficos.</p>
-                          <p  class="btn btn-success">Votos:<strong > El numero</strong> </p>
+                          <p class="btn btn-success">Votos: <strong >{{votos_base_matematica}}</strong> </p>
                         </div>
                     </div>
                 </div>
@@ -105,7 +107,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Aplicaciones</h5>
                           <p class="card-text">En este apartado aprendiste, Sobre las distintas aplicaciones de la criptografía homomorfica en la vida real.</p>
-                          <p  class="btn btn-success">Votos:<strong > El numero</strong> </p>
+                          <p  class="btn btn-success">Votos: <strong >{{votos_aplicaciones}}</strong> </p>
                         </div>
                     </div>
                 </div>

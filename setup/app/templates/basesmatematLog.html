@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bases</title>
+      
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <style>
+            .nav-link{
+                color: #c0c0c0;
+            }
+            .nav-link:hover {
+                color:#2B5F4A ;
+            }
+            p{
+              text-align: justify
+            }
+            @media (max-width: 1000px) {
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        </style>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary  " style=" padding-right:30px ; padding: 20px; background-color: #212529 !important;" >
+        <div class="container-fluid sm-justify-content-end">
+
+            
+                
+            <a href="/" class="navbar-brand " style="padding-left: 30px;">
+               
+                <div class="row align-items-center">
+                  <div class="col-4 justify-content-center  " style="margin-right: -25px;">
+                    <img src="../static/protection.png" width="80px" height="80px" class="img-fluid mr-2" >
+                  </div>
+                  <div class="col-4">
+                    <h3 style="color: #C7E5D4;">Homomorphic<br> Encrypt</h3>
+                  </div>
+                </div>
+             </a>
+          <button class="navbar-toggler   bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          
+          <div class="collapse navbar-collapse justify-content-center text-center" id="navbarSupportedContent">
+            <div class="">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                <li class="nav-item">
+                  <a class="nav-link" href="#QueEs"> ¿Qué es? </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="#">¿Para qué sirve? </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/base_matematica">Base matemática </a>
+                </li>
+                <li>
+                  <a class="nav-link" href="#">Aplicaciones </a>
+                </li>
+                <li><a class="nav-link" href="/votaciones">Votaciones </a></li>
+                <li><a class="nav-link" href="/conteoVotos">Recuento de votos </a></li>
+                <li><a class="nav-link" href="/logout">Cerrar sesión </a></li>
+              </ul>
+            
+          </div>
+        </div>
+        </div>
+        </div>
+      </nav>
+<!-- base mat -->
+        <section class="mt-5 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-12 col-md-8">
+                        <h2 class="text-center mb-4">Base matemática de la criptografía homomorfica</h2>
+                        <p class="">La criptografía homomórfica se caracteriza por tener distintos sistemas criptográficos que utilizan este sistema de cifrado. Entre los cuales podemos encontrar:</p>
+                        <div class="list-group mb-5 " style="width: 50%;"> 
+                          <a href="#prop" class="list-group-item list-group-item-action">Esquemas que tienen propiedades homomórficas</a>
+                          <a href="#reticulos" class="list-group-item list-group-item-action">Criptografía basada en retículos</a>
+                          <a href="#Esquemas" class="list-group-item list-group-item-action">Esquemas homomórficos </a>
+                      </div>
+                      <div class="primera-seccion ">
+                        <h4 class="mb-3" id="prop">Esquemas que tienen propiedades homomórficas:</h4>
+                        <div class="list-group mb-5 " style="width: 50%;"> 
+                            <a href="#Pallier" class="list-group-item list-group-item-action">Paillier</a>
+                            <a href="#RSA" class="list-group-item list-group-item-action">RSA</a>
+                            <a href="#ElGammal" class="list-group-item list-group-item-action">ElGamal </a>
+                        </div>
+                    <div class="mb-4" id="Pallier">
+                        <h5>Paillier: </h5>
+                        <p style="text-align: justify;"> El esquema de Palier es un sistema de cifrado asimétrico (clave pública y clave privada) que tiene propiedades homomórficas en la operación de adición y multiplicación, estas propiedades permiten realizar sumas y multiplicaciones por escalares sobre los datos cifrados.
+                            El esquema se basa en el problema a la hora de calcular la residualidad compuesta del enésimo residuo, y la seguridad viene dada por el problema computacional de factorizar números grandes.
+                            <br>Teniendo como clave pública el par (n,g) siendo: </p>
+                            <ul>
+                                <li>n → Es el producto de dos números primos grandes, p y q</li>
+                                <li>g → Es un número entero que Z*n2</li>
+                            </ul>
+                        <p>En cuanto a la clave privada, tenemos:</p>
+                        <img src="../static/form1.JPG" alt="">
+                        <p>Para cifrar un mensaje m, se elige un numero aleatorio denominado r  Zn* y el mensaje cifrado es: </p>       
+                        <img src="../static/form2.JPG" alt="">   
+                        <p>La propiedad homomórfica viene dada debido a que dos mensajes cifrados c1, c2, si se multiplican ambos</p>
+                        <img src="../static/form3.JPG" alt="">
+                        <p>El resultado obtenido es un cifrado válido de la suma de los mensajes m1 y m2. </p>
+                    </div>
+                    <div class="mb-4" id="RSA">
+                        <h5>RSA: </h5>
+                        <p style="text-align: justify;">El esquema de cifrado de clave pública RSA, desarrollado por Ron Rivest, Adi Shamir y Leonard Adleman en 1977, utiliza la factorización de números enteros como problema matemático base para garantizar su seguridad. Pese a que RSA no es un esquema de cifrado homomórfico completo, posee propiedades homomórficas parciales, lo que permite realizar ciertas operaciones matemáticas sobre mensajes cifrados sin necesidad de descifrarlos previamente.<br>Una de las propiedades homomórficas parciales del RSA es la multiplicación. Esto significa que, dada una clave pública (n, e) y dos mensajes cifrados  c1 = m1^e mod n y c2 = m2^e mod n , se puede calcular el producto de los mensajes originales m1 y m2 multiplicando sus cifrados:</p>
+                        <img src="../static/form4.JPG" alt="">
+                        <p class="mt-3" style="text-align: justify;">El resultado es un cifrado válido del producto de los mensajes (m1 * m2). Sin embargo, esta propiedad homomórfica es limitada en comparación con otros esquemas de cifrado, ya que no permite realizar operaciones de suma o una cantidad ilimitada de operaciones matemáticas.
+                            La ventaja principal del esquema RSA radica en su simplicidad y su amplia adopción en la industria, lo que lo convierte en una opción popular para la comunicación segura en línea. A pesar de estas ventajas, el esquema RSA presenta desventajas en términos de velocidad, en particular cuando se trata de cifrado homomórfico. Los esquemas más modernos, como Paillier, ElGamal y esquemas de cifrado homomórfico totalmente (FHE), ofrecen una mayor eficiencia y propiedades homomórficas más robustas que permiten realizar una gama más amplia de operaciones matemáticas sobre datos cifrados.
+                            </p>
+                    </div>
+                    <div class="mb-4" id="ElGammal">
+                        <h5>ElGamal: </h5>
+                        <p style="text-align: justify;"> El esquema de cifrado de clave pública ElGamal, propuesto por Taher Elgamal en 1985, se basa en problemas matemáticos difíciles con el fin de garantizar su seguridad, al igual que RSA. 
+                            El Gamal es utilizado en el estándar de cifrado de datos de internet (PGP) y posee propiedades homomórficas parciales, lo que permite realizar ciertas operaciones matemáticas sobre mensajes cifrados sin necesidad de descifrarlos previamente. Al igual que RSA, ElGamal permite multiplicar dos mensajes cifrados y obtener el mensaje cifrado del producto de los mensajes originales.
+                            <br> Dada una clave pública (p, g, h) y dos mensajes cifrados </p>
+                            <img src="../static/form5.JPG" alt="">
+                            <p>, se puede calcular el producto de los mensajes originales m1 y m2 multiplicando los componentes c2 de sus cifrados:</p>
+                            <img src="../static/form6.JPG" alt="">
+                            <p>El resultado es un cifrado válido del producto de los mensajes (m1 * m2) en la forma </p>
+                            <img src="../static/form7.JPG" alt="">
+                            <p>La ventaja principal de ElGamal en comparación con RSA es la mayor velocidad de cómputo. Sin embargo, también presenta desventajas, como una mayor complejidad en su implementación y una adopción menos amplia en la industria en comparación con RSA.</p>
+                    </div>
+                    </div>
+                    <div class="segunda-seccion " id="reticulos">
+                      <h4 class="mb-3">Criptografía basada en retículos:</h4>
+                      
+                      <div class="mb-4" id="Pallier">
+                        
+                        <p style="text-align: justify;"> La criptografía basada en retículos se enfoca en el estudio de las propiedades matemáticas de los retículos, las cuales son estructuras algebraicas que se utilizan como primitivas criptográficas para desarrollar esquemas criptográficos, en nuestro caso, también son utilizadas para desarrollar el sistema criptográfico homomórfico.<br>
+                        <br>Los problemas basados en retículos son problemas mayoritariamente de optimización, también llamados problemas de celosía consisten en encontrar una solución para ese problema utilizando el menor tiempo posible. <br>
+                        <br> La razón por la que se utilizan estos problemas con retículos dado que se asume que no existe una manera eficiente de resolver problemas bien conocidos de retículos. Debido a que la solución en el peor de los casos es extremadamente difícil, se usa como base para la creación de los criptosistemas denominados “extremadamente seguros” incluso pudiendo ser resistentes contra un ataque llevado a cabo por un ordenador cuántico.
+                        </p>
+                        <p> A continuación se describirán algunos problemas basados en retículos, como por ejemplo:</p>
+
+                        <div class="list-group mb-5 " style="width: 50%;"> 
+                          <a href="#SVP" class="list-group-item list-group-item-action">Problema del vector más corto (SVP)</a>
+                          <a href="#CVP" class="list-group-item list-group-item-action">Problema del vector más cercano (CVP)</a>
+                          <a href="#LWE" class="list-group-item list-group-item-action">Aprendizaje por errores (LWE)</a>
+                          <a href="#RLWE" class="list-group-item list-group-item-action">Aprendizaje por errores sobre anillos (RLWE)</a>
+                        </div> 
+                          <div>
+                            <h5 class="mb-3" id="SVP">Problema del vector más corto (SVP):</h5>
+                            <p>El problema del vector más corto, en adelante SVP de sus siglas en inglés (Shortest Vector Problem) es un problema fundamental en la criptografía, respecto a la criptografía homomórfica, el SVP se utiliza como medio para la construcción de sistemas criptográficos seguros basados en las redes euclidianas, las cuales son un tipo de estructura matemática utilizada en la criptografía para la definición de operaciones entre vectores y matrices.<br>
+                            <br>Teniendo como red euclídea un espacio de coordenadas cartesiano, el objetivo consiste en encontrar el camino más corto entre dos nodos, donde cada nodo representa un punto de esta red euclídea y las aristas las conexiones entre los nodos.<br>
+                            <br>Para la resolución de este problema, teniendo en cuenta lo definido anteriormente, se puede utilizar el algoritmo de Dijkstra o el algoritmo A*, tomando en cuenta las distancias entre los nodos y las conexiones existentes entre ellos. Estos algoritmos únicamente son aplicables a retículos con dimensiones bajas, sin embargo, cuando nos vamos a las retículas de alta dimensión, resultan poco prácticos debido a que el número de vectores a examinar crece de manera exponencial con la dimensión.</p>
+                          </div>
+                          <div>
+                            <h5  class="mb-3" id="CVP">Problema del vector más cercano (CVP):</h5>
+                            <p>El problema del vector más cercano, en adelante CVP es un problema de optimización dentro del área de la geometría computacional en donde se intenta encontrar el vector más cercano en cuanto a distancia euclidiana se refiere en una base de vectores dados, en términos de la criptografía homomórfica, consistiría en que el atacante intentará conseguir el mensaje original a partir de un mensaje cifrado utilizando operaciones homomórficas.<br>
+                            <br>
+                            Dada una base de vectores (b1,b2 , ... ,bn) en un espacio euclídeo de n-dimensiones, el problema consiste en encontrar un vector x que minimice la distancia || x - v || entre x y un vector objetivo v, donde || . || es la norma Euclidiana.<br>
+                            <br>El vector x se puede escribir como una combinación lineal de los vectores de la base, de la forma:  </p>
+                            <img src="../static/form8.JPG" alt="">
+                            <p>donde ai es un coeficiente entero para cada vector unitario de la base.<br>
+                            <br>No existe/se conoce un algoritmo para resolver el CVP de una manera eficiente en un tiempo polinómico, sin embargo, sí que existen algoritmos aproximados que son capaces de resolver el problema en un tiempo polinómico.</p>
+                          </div>
+                          <div>
+                            <h5 class="mb-3" id="LWE">Aprendizaje por errores (LWE):</h5>
+                            <p>El aprendizaje por errores, de ahora en adelante LWE, es un problema matemático que se utiliza en el ámbito de la criptografía para construir sistemas criptográficos seguros y eficientes. De igual manera que los problemas explicados en apartados anteriores, el LWE está basado en redes euclidianas.<br>
+                            <br>Teniendo un conjunto de pares (ai,bi) donde ai es un vector aleatorio y bi es el producto escalar de ai con un vector secreto s sumado a un valor de ruido e, es decir que bi = ai * s +e, el objetivo es obtener el valor “s” a partir de los pares (ai,bi).<br>
+                            <br>
+                            El problema LWE es un problema con una complejidad computacional alta, en particular, para el peor de los casos, es difícil encontrar un algoritmo que lo resuelva en un tiempo polinómico. Este problema en cuanto a la criptografía homomórfica, se ha utilizado para construir sistemas del tipo FHE (Fully Homomorphic Encryption), el cual permite realizar cualquier operación aritmética sobre los datos cifrados.
+                            </p>
+                          </div>
+                          <div >
+                            <h5 id="RLWE">Aprendizaje por errores sobre anillos (RLWE):</h5>
+                            <p>El aprendizaje por errores sobre anillos, de ahora en adelante RLWE, es un problema matemático empleado para crear sistemas criptográficos seguros y que guarda cierta similitud con el aprendizaje por errores (LWE) explicado en el apartado anterior.<br>
+                            <br>El RLWE se define como sigue:<br>
+                            <br> Se tiene un polinomio aleatorio f y otro polinomio g que es el producto del polinomio f y un polinomio secreto s más un valor de ruido e, es decir, g=f*s+e. El objetivo del RLWE es recuperar el polinomio secreto s a partir del par de polinomios (f,g).<br> 
+                            <br>
+                            El teorema que está detrás de este problema y del anterior consiste en la reducción del SVP en redes euclidianas a RLWE en anillos algebraicos, es decir, se establece que el problema SVP en redes euclidianas se puede reducir al problema RLWE en ciertos anillos de polinomios.
+                            
+                            </p>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="tercera-seccion" id="Esquemas">
+                      <h4 class="mb-3">Esquemas homomórficos:</h4>
+                      <p>Dentro de la criptografía homomórfica tenemos diferentes esquemas de cifrado diferenciados por las capacidades de realizar operaciones homomórficas de cada uno, los tipos de esquemas homomórficos más populares son tres:</p>
+                      <div class="list-group mb-5 " style="width: 50%;"> 
+                        <a href="#PHE" class="list-group-item list-group-item-action">Esquema Parcialmente Homomórfico (PHE)</a>
+                        <a href="#FHE" class="list-group-item list-group-item-action">Esquema Completamente Homomórfico (FHE)</a>
+                       
+                    </div>
+
+                    <h4 id="PHE">Esquema Parcialmente Homomórfico (PHE)</h4>
+                    <p> El cifrado parcialmente homomórfico, de ahora en adelante PHE de sus siglas en inglés (Partially Homomorphic Encryption) es un tipo de cifrado que nos permite realizar ciertas operaciones matemáticas sobre los datos cifrados sin la necesidad de descifrarlos previamente.<br>
+                    <br> A diferencia del cifrado completamente homomórfico, en este solo se pueden efectuar menos operaciones y mas limitadas.<br>
+                    <br>El PHE fue descubierto por los creadores del algoritmo RSA el cual, como se ha explicado en apartados anteriores, posee varias de estas propiedades homomórficas que nos permiten operar sobre los datos cifrados sin necesidad de descifrarlos.</p>
+                    
+                    <h5>Cifrado de Goldwasser-Micali:</h5>
+                    <p>El cifrado de Goldwasser-Micali es un esquema criptográfico asimétrico que basa su seguridad en la dificultad computacional de la resolución del residuo cuadrático en módulo n, fue propuesto en el año 1984 y es uno de los primeros algoritmos de clave pública que se basa en problemas matemáticos complejos.<br>
+                    <br>La base detrás de este esquema de cifrado es que se pueda cifrar un mensaje de tal manera que sea fácil comprobar si un número es la clave correcta pero que sea difícil encontrar la clave correcta si no se tiene la información exacta. En este caso, el mensaje se representa como una cadena en binario y se cifra aplicando la función de cifrado a cada bit del mensaje.<br>
+                    <br>El proceso de generación de claves es el siguiente:</p>
+                      
+                      <ul>
+                        <li>Inicialmente seleccionamos dos números primos grandes ‘p’ y ‘q’ que no sean iguales.</li>
+                        <li>Calculamos n = p*q</li>
+                        <li>Elegimos un número x | 1 < x < n y que el número x sea residuo cuadrático no trivial módulo n, es decir, que la ecuación y2=x (mod n) tenga dos soluciones distintas, (y1, y2)</li>
+                        <li>La clave pública será el par kpub  = (n,x) y la clave privada es la factorización de n en sus primos, es decir,  kpriv = (p,q)</li>
+                      </ul>
+                  
+                      <p>Una vez que hemos generado el par de claves, el proceso de cifrado consiste en asociar cada bit del mensaje a cifrar con un residuo cuadrático módulo n, asignando un ‘0’ a los residuos cuadráticos no triviales y un ‘1’ a los residuos cuadráticos triviales, entonces generamos una secuencia de residuos cuadráticos aleatorios r1,r2,r3,r4, ... , ri de manera que vayan intercalados, es decir, si el i-ésimo bit del mensaje es un 0, será un residuo cuadrático no trivial y si es un 1, un residuo cuadrático lineal. <br><br>
+                        Calculamos c = r1 * xb1 * r2 * xb2 * ... * ri*xbi donde bi es el i-ésimo bit del mensaje a cifrar.<br><br>
+                        Para descifrar, tendríamos que determinar para cada r si es un residuo cuadrático o no mediante la ecuación rip-12 = 1 (mod p) y riq-12 = 1 (mod q), si ri es un residuo cuadrático no trivial, se asume que el i-ésimo bit es 0 y viceversa.
+                        <br><br>Finalmente, las propiedades homomórficas que ofrece este esquema de cifrado es el siguiente:</p>
+
+                        <img src="../static/form9.JPG" >
+
+                        <p>Es esta la razón por la que el esquema de cifrado de Goldwasser-Micali se suele utilizar como base para la creación de primitivas criptográficas más complejas.</p>
+
+                        <h5>Cifrado de Benaloh:</h5>
+                        <p>El cifrado de Benaloh es un esquema criptográfico asimétrico que tiene propiedades homomórficas, fué propuesto en el año 1994 y la seguridad radica en dos aspectos, la aritmética modular y la complejidad de computación en la factorización de enteros dado que es altamente costoso factorizar números muy grandes en sus primos.<br><br>
+                          El proceso de cifrado es el siguiente:</p>
+
+                          <ul>
+                              <li>El emisor selecciona un número grande p y dos números enteros aleatorios a,b </li>
+                              <li>El emisor genera una lista de n-números aleatorios y calcula su producto.</li>
+                              <li>Para cada bit del mensaje que se quiere cifrar se codifica como un número entero y se aplica la función de cifrado, que es la siguiente: c = (2r + m + a * xb) mod p donde r es un número aleatorio de la lista generada anteriormente y x es el producto de los n números aleatorios de la lista.</li>
+                              <li>El emisor envía c a un destinatario.</li>
+                          </ul>
+                          <p>Para el descifrado, el receptor calcula potencias de x usando el producto total de los números aleatorios generados durante el proceso de cifrado, a continuación calcula a-1mod p y utiliza la fórmula de descifrado: m = (c-a*(xb)-1*2r-1) mod p donde c es el mensaje cifrado y r es el número aleatorio de la lista de n-números. <br><br>Respecto a las propiedades homomórficas, el esquema de cifrado de Benaloh es considerado multiplicativamente homomórfico, es decir, es posible realizar una multiplicación entre dos mensajes cifrados y obtener como resultado el cifrado de la multiplicación de los dos mensajes originales, de la siguiente manera
+                            Teniendo Enc como función de cifrado: </p>
+                            <img src="../static/form10.JPG" alt="">
+
+                    <h4 id="FHE" class="mb-4">Sistemas de cifrado totalmente homomórficos (FHE)</h4>
+                    <h5>BGV (Brakerski-Gentry-Vaikuntanathan):</h5>
+                    <p>Es un esquema de cifrado que se basa en la criptografía basada en retículas. En términos técnicos, BGV se construye utilizando una versión modificada del problema del aprendizaje con errores (LWE), en el que se asume que un adversario no puede distinguir entre un conjunto de pares de valores aleatorios y un conjunto de valores enmascarados.<br><br>
+                      En BGV, los datos se codifican como polinomios y se cifran en una red reticular de alta dimensión. El cifrado se logra mediante una transformación lineal de los vectores de la red, que se realiza utilizando una matriz de clave pública. La decodificación se realiza mediante la solución de un problema de optimización de retícula, que es del tipo NP-duro.<br><br>
+                      El proceso de cifrado es el siguiente:</p>
+                      <ul>
+                        <li><p>Generación de claves:</p></li>
+                      </ul>
+                      
+                      <p>El proceso de generación de claves en BGV empieza por elegir dos números primos grandes p y q donde p q. Una vez que tenemos estos dos valores, definimos un polinomio irreducible denotado por f(x) de grado n con coeficientes en el campo finito Zp[x] / f(x).</p>
+                      <p>Se elige un elemento g aleatorio del anillo polinomial Rq = Zq[x] / (xn+1) y se calculan los ideales de la forma a1Rq + a2(xn+1)Rq donde a1,a2  Zp[x] / f(x). Una vez sabemos cómo se calculan los ideales se eligen dos, uno público y uno privado respectivamente.</p>
+                      <ul>
+                        <li><p>Cifrado de un mensaje:</p></li>
+                      </ul>
+                      <p>La información a cifrar se convierte en un vector denotado por m</p>
+                      <p>Se elige un polinomio aleatorio “r” con coeficientes en el campo Zq[x] / (xn+1), se calcula el producto del vector “r” con la clave pública, de ahora en adelante pk y se le suma el vector “m”, de la siguiente forma: c = pk*r +m, posteriormente se le añade r*q a c: c' = c+r*q.
+                        El resultado c’ es el mensaje “m” cifrado.
+                        
+                        Respecto a la homomorficidad aditiva, se asume que existen dos polinomios cifrados, C(m1) y C(m2), que corresponden a los mensajes m1 y m2 respectivamente, y se desea calcular la suma de estos mensajes, C(m1 + m2). La homomorficidad aditiva establece que:</p>
+                        <img src="../static/form11.JPG" >
+                        <p>Donde pk es la clave pública, p y q son dos polinomios aleatorios de anillo, y u es un polinomio pequeño que asegura la seguridad del cifrado. La suma de dos polinomios cifrados se puede calcular como:
+                        </p>
+                        <img src="../static/form12.JPG" >
+                        <p>Donde v1 y v2 son dos polinomios aleatorios de anillo. Como se puede ver, la suma de los polinomios cifrados resulta en un polinomio cifrado que corresponde a la suma de los mensajes originales, demostrando la homomorficidad aditiva.</p>
+                        <p>Para demostrar la homomorficidad multiplicativa, se asume que existen dos polinomios cifrados, C(m1) y C(m2), que corresponden a los mensajes m1 y m2respectivamente, y se desea calcular el producto de estos mensajes, C(m1 *  m2). La homomorficidad multiplicativa establece que:
+                        </p>
+                        <img src="../static/form13.JPG" >
+                        <p>Donde x es un polinomio pequeño, r es un entero aleatorio y v es un polinomio pequeño que asegura la seguridad del cifrado. El producto de dos polinomios cifrados se puede calcular como:</p>
+                        <img src="../static/form14.JPG" >
+                        <p>Donde v1y v2 son dos polinomios aleatorios de anillo. Como se puede ver, el producto de los polinomios cifrados resulta en un polinomio cifrado que corresponde al producto de los mensajes originales, demostrando la propiedad homomórfica multiplicativa.</p>
+
+                        <h5>GSW (Gentry-Sahai-Waters):</h5>
+                        <p> El esquema de cifrado completamente homomórfico GSW es un esquema de cifrado completamente homomórfico que fue propuesto por Gentry, Sahai y Waters en el año 2013, y propone un esquema FHE basado en el problema del aprendizaje con errores en retículos (LWE) mas simplificado debido a que no se utilizan cambios de módulo ni claves de evaluación, sin embargo, se aprovecha de que el crecimiento del “ruido discreto” se mantiene lineal debido a la profundidad multiplicativa.</p>
+                        <p>Este esquema de cifrado completamente homomórfico soporta operaciones tanto de suma como de multiplicación homomórficas, la base de funcionamiento de este esquema es, como se ha mencionado en el anterior párrafo, el ruido discreto, el cual actúa como una fuente de aleatoriedad que oculta la información obtenida en los datos originales y cuyo crecimiento es lineal.</p>
+                        <p>En este esquema, el bit m del texto plano se extiende en el propio vector en texto plano a cifrar multiplicando este valor por un vector “gancho”, posteriormente cada entrada del vector a cifrar se cifra en un vector de texto cifrado que tiene forma de matriz en lugar de vector, en concordancia con el tipo de dato que es utilizado en el LWE.</p>
+                        <p>En años sucesivos se han hecho propuestas de esquemas de cifrado completamente homomórficos basados en este GSW, por ejemplo, en el año 2018 se propusieron nuevos métodos de evaluación de enteros polinomiales el cual tiene un crecimiento mucho menor del ruido y el coste para la multiplicación es bastante menor.</p>
+                        <p>Si desea mas información puede acceder al paper en la siguiente url: <a href="https://academic.oup.com/comjnl/article-abstract/61/4/575/4791881"> Efficient Homomorphic Integer Polynomial Evaluation Based on GSW FHE | The Computer Journal | Oxford Academic (oup.com)</a>
+                        </p>
+                        <p>El último reporte relevante respecto a este tema, se realizó en el año 2021, donde se propone un esquema de cifrado completamente homomórfico basado en el GSW sobre los números enteros, de ahora en adelante FHE-OI. Este esquema de cifrado nuevamente se ha creado con el objetivo de mejorar la eficiencia, en este caso se propuso una nuevo método para calcular el ruido denominado “secuenciación”. Este estudio obtuvo como resultado que, utilizando este nuevo método de cálculo del ruido, las operaciones con mayor profundidad multiplicativa se podían evaluar con los mismos parámetros. Si se desea indagar más acerca de este estudio, puede acceder al siguiente enlace: <a href="https://www.hindawi.com/journals/scn/2021/8823787/">Efficient GSW-Style Fully Homomorphic Encryption over the Integers (hindawi.com) </a>
+                        </p>
+                    
+                    
+                      </div>
+                    
+                </div>
+                    <div class="col-lg-2"></div>
+                </div>
+            </div>
+            
+        </section>
+
+        <footer class="bg-dark text-light pt-4 mt-5 " >
+            <div class="container">
+              <div class="row ">
+                <div class="col-12 ">
+                  <h4 class="text-center">Información de contacto</h4>
+                  <p class="text-center">Javier Matilla Martín:  <a href="https://www.linkedin.com/in/javier-matilla-mart%C3%ADn-10a3a3246/" style="text-decoration: none; color: #2B5F4A;">linkedin.com/in/javier-matilla-mart/</a></p>
+                  <p class="text-center">Juan Camilo Muñoz Salazar: <a href="https://www.linkedin.com/in/juancamilomunozsalazar/" style="text-decoration: none; color: #2B5F4A;">linkedin.com/in/juancamilomunozsalazar/</a></p>
+                </div>
+               
+               
+              </div>
+              <hr>
+              <p class="text-center">Master en seguridad de la información y las comunicaciones, Universidad Europea. </p>
+              
+            </div>
+          </footer>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+</html>

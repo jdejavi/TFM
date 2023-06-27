@@ -6,11 +6,6 @@ app = Flask(__name__)
 
 app.register_blueprint(routes1, url_prefix='/')
 
-
-@app.route('/')
-def home():
-    return render_template('indexNoLog.html')
-
 if __name__ == '__main__':
     app.run()
     context = ('cert.pem','key.pem')

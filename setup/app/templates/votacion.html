@@ -7,8 +7,8 @@
         <title>votacion</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+       
          <style>
             .nav-link{
                 color: #c0c0c0;
@@ -25,64 +25,85 @@
          </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary " style="background-color: #2e2e2e; padding-right:30px ; padding: 20px;">
-            <div class="container-fluid">
-                <a href="/" class="navbar-brand " style="padding-left: 30px;">
-                    <div class="row align-items-center">
-                      <div class="col-4 justify-content-center  " style="margin-right: -25px;">
-                        <img src="../static/protection.png" width="80px" height="80px" class="img-fluid mr-2" >
-                      </div>
-                      <div class="col-4">
-                        <h3 style="color: #C7E5D4;">Homomorphic<br> Encrypt</h3>
-                      </div>
-                    </div>
-                  </a>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary  " style=" padding-right:30px ; padding: 20px; background-color: #212529 !important;" >
+        <div class="container-fluid sm-justify-content-end">
+
+            
                 
-              <div class="collapse navbar-collapse justify-content-end " style=" margin-right: 100px;" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  
-                  <a class="nav-link" href="#QueEs"> ¿Qué es? </a>
-                  <a class="nav-link" href="#">¿Para qué sirve? </a>
-                  <a class="nav-link" href="#">Base matemática </a>
-                  <a class="nav-link" href="#">Aplicaciones </a>
-                  <a class="nav-link" href="/votaciones">Votaciones </a>
-                  <a class="nav-link" href="#">Cerrar sesión </a>
+            <a href="/" class="navbar-brand " style="padding-left: 30px;">
+               
+                <div class="row align-items-center">
+                  <div class="col-4 justify-content-center  " style="margin-right: -25px;">
+                    <img src="../static/protection.png" width="80px" height="80px" class="img-fluid mr-2" >
+                  </div>
+                  <div class="col-4">
+                    <h3 style="color: #C7E5D4;">Homomorphic<br> Encrypt</h3>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </nav>
+             </a>
+          <button class="navbar-toggler   bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          
+          <div class="collapse navbar-collapse justify-content-center text-center" id="navbarSupportedContent">
+            <div class="">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+              <li class="nav-item">
+                <a class="nav-link" href="#QueEs"> ¿Qué es? </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="#">¿Para qué sirve? </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/base_matematica">Base matemática </a>
+              </li>
+              <li>
+                <a class="nav-link" href="#">Aplicaciones </a>
+              </li>
+              <li><a class="nav-link" href="/votaciones">Votaciones </a></li>
+              <li><a class="nav-link" href="/conteoVotos">Recuento de votos </a></li>
+              <li><a class="nav-link" href="/logout">Cerrar sesión </a></li>
+            </ul>
+            
+          </div>
+        </div>
+        </div>
+        </div>
+      </nav>
+
         <div class="container">
             <div class="row text-center" style="margin-bottom: 100px;">
                 <div class="mb-5">
                 <h1 class="mt-5 mb-5 " >¡ Vota por tu apartado favorito !</h1>
                 </div>
-                <div class="d-flex justify-content-center col-4">
+                <div class="d-flex justify-content-center col-12 col-md-4 mb-5">
                     <div class="" style="width: 18rem;">
                     <img src="../static/question-mark.png" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">¿Qué es?</h5>
                           <p class="card-text">En este apartado aprendiste, que es la criptografía homomórfica.</p>
-                          <a href="#" id="voto_que_es" class="btn btn-success">¡ Votar !</a>
+                          <a id="voto_que_es" class="btn btn-success">¡ Votar !</a>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center col-4">
+                <div class="d-flex justify-content-center col-12 col-md-4 mb-5">
                     <div class="" style="width: 18rem;">
                         <img src="../static/think.png" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Base matemática</h5>
                           <p class="card-text">En este apartado aprendiste, sobre los fundamentos Matemáticos en algunos sistemas de cifrado homomórficos.</p>
-                          <a href="#" id="voto_base_matematica" class="btn btn-success">¡ Votar !</a>
+                          <a id="voto_base_matematica" class="btn btn-success">¡ Votar !</a>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center col-4">
+                <div class="d-flex justify-content-center col-12 col-md-4 mb-5">
                     <div class="" style="width: 18rem;">
                     <img src="../static/working.png" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Aplicaciones</h5>
                           <p class="card-text">En este apartado aprendiste, Sobre las distintas aplicaciones de la criptografía homomorfica en la vida real.</p>
-                          <a href="#" id="voto_aplicaciones" class="btn btn-success">¡ Votar !</a>
+                          <a id="voto_aplicaciones" class="btn btn-success">¡ Votar !</a>
                         </div>
                     </div>
                 </div>
@@ -106,12 +127,13 @@
               <p class="text-center">Master en seguridad de la información y las comunicaciones, Universidad Europea. </p>
             </div>
           </footer>
-   
-    </body>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+           </body>
  
 </html>
 
 <script>
+ 
   document.getElementById("voto_que_es").addEventListener("click", function() {
       fetch('https://homomorphicEncrypt.he/votaciones', {
           method: 'POST',
