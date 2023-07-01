@@ -116,3 +116,10 @@ def base_matematica():
         return render_template('basesmatematLog.html')
     else:
         return render_template('basesmatemat.html')
+
+@routes1.route('/aplicaciones')
+def aplicaciones():
+    if(compruebaCookie()):
+        return render_template('aplicacionesLog.html')
+    else:
+        return render_template('aplicaciones.html')
