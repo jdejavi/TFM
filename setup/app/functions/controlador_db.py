@@ -32,23 +32,6 @@ def usuario_registrado(hash,email):
            connection.close()
            return False
 
-def comprueba_user(cookie_key, mail):
-     connection=pymysql.connect(host='172.18.0.3',
-                           user='root',
-                           password='root',
-                           db='web_tfm')
-     cursor=connection.cursor()
-     if(cursor):
-       print('DB Connected')
-       busqueda = "SELECT * FROM usuarios WHERE passwd=%s AND mail=%s"
-       fila=cursor.execute(busqueda,(cookie_key,mail,))
-       if(fila==1):
-           connection.close()
-           return True
-       else:
-           connection.close()
-           return False
-
 def insertaVariables(nombre,apellidos,email,nickname,passwd):
     connection=pymysql.connect(host='172.18.0.3',
                            user='root',
@@ -61,8 +44,8 @@ def insertaVariables(nombre,apellidos,email,nickname,passwd):
         bytes = passwd.encode()
         hashPwd = hashlib.sha256(bytes)
         
-        consulta = "SELECT COUNT(*) FROM usuarios WHERE nickname = %s;"
-        cursor.execute(consulta, (nickname,))
+        consulta = "SELECT COUNT(*) FROM usuarios WHERE mail = %s;"
+        cursor.execute(consulta, (email,))
         resultado = cursor.fetchone()
         if resultado[0] > 0:
             print("El valor ya existe en la base de datos.")
@@ -96,15 +79,12 @@ def annade_voto(option):
 
     if(cursor):
         with connection.cursor() as cursor:
-            # Cifrar un 1 para la opción seleccionada y un 0 para las demás
             for i in options:
                 if i == option:
-                    #print(f'cifrando un 1 para {i}')
                     vote = public_key.encrypt(1)
                 else:
-                    #print(f'cifrando un 0 para {i}')
                     vote = public_key.encrypt(0)
-                #vote = public_key.encrypt(1) if i == option else public_key.encrypt(0)
+                
                 sql = "SELECT recuento FROM votos WHERE opcion = %s"
                 cursor.execute(sql, (i,))
                 result = cursor.fetchone()
@@ -115,47 +95,6 @@ def annade_voto(option):
         connection.commit()
     else:
         connection.close()
-
-'''
-def obtieneVotosOpcion(opcion):
-    public_key, private_key = generate_or_load_keypair()
-
-    connection=pymysql.connect(host='172.18.0.3',
-                           user='root',
-                           password='root',
-                           db='web_tfm')
-
-    cursor=connection.cursor()
-
-    if(cursor):
-        busqueda = "SELECT recuento FROM votos WHERE opcion = %s"
-        fila=cursor.execute(busqueda,(opcion,))
-
-        if(fila==1):
-           connection.close()
-           return fila
-        else:
-            connection.close()
-            return False
-
-def actualizaVotosOpcion(opcion, nuevoValor):
-    connection=pymysql.connect(host='172.18.0.3',
-                           user='root',
-                           password='root',
-                           db='web_tfm')
-
-    cursor=connection.cursor()
-
-    if(cursor):
-        actualizacion = "UPDATE votos SET votos=%s WHERE opcion=%s"
-        cursor.execute(actualizacion, (nuevoValor, opcion))
-        connection.commit()
-        connection.close()
-
-        if cursor.rowcount > 0:
-            return True  # Actualización exitosa
-        else:
-            return False'''
 
 def get_results():
     from functions.functions import generate_or_load_keypair

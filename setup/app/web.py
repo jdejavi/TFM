@@ -7,6 +7,5 @@ app = Flask(__name__)
 app.register_blueprint(routes1, url_prefix='/')
 
 if __name__ == '__main__':
-    app.run()
     context = ('cert.pem','key.pem')
     app.run(ssl_context=context, port=443, debug=True)

@@ -31,20 +31,12 @@ def generate_or_load_keypair():
             json.dump(keys, f)
     return public_key, private_key
 
-def mapear_letras(texto):
-    numeros = [ord(caracter) for caracter in texto]
-    return numeros
-
-def mapear_enteros(vector_enteros):
-    letras = [chr(entero) for entero in vector_enteros if 0 <= entero <= 127]
-    return ''.join(letras)
-
 def compruebaCookie():
     '''if(email is None): return False'''
     prueba = request.cookies.get('cookie_key')
     email = request.cookies.get('email_user')
     
-    if(comprueba_user(prueba,email)): return True
+    if(usuario_registrado(prueba,email)): return True
     else: return False
 
 def verificar_archivo(archivo):
@@ -53,37 +45,3 @@ def verificar_archivo(archivo):
         return True
     else:
         return False
-    
-def convertir_vector_a_string(vector):
-    vector_str = [str(elemento) for elemento in vector]
-    return ','.join(vector_str)
-'''
-def añadeVotoAOpcion(opcion):
-    
-    public_key, private_key = generate_or_load_keypair()
-    
-    voto_que_es = public_key.encrypt(1 if opcion == 'que_es' else 0)
-    voto_base_matematica = public_key.encrypt(1 if opcion == 'base_matematica' else 0)
-    voto_aplicaciones = public_key.encrypt(1 if opcion == 'aplicaciones' else 0)
-
-    total_que_es = obtieneVotosOpcion('que es') + voto_que_es
-    total_base_matematica = obtieneVotosOpcion('base matematica') + voto_base_matematica
-    total_aplicaciones = obtieneVotosOpcion('aplicaciones') + voto_aplicaciones
-
-    votoFinal_ques = private_key.decrypt(total_que_es)
-    votoFinal_base = private_key.decrypt(total_base_matematica)
-    votoFinal_app = private_key.decrypt(total_aplicaciones)
-
-    print(f'Votos que es --> {votoFinal_ques}')
-    print(f'Votos base --> {votoFinal_base}')
-    print(f'Votos app--> {votoFinal_app}')
-
-    actualizaVotosOpcion('que es', total_que_es)
-    actualizaVotosOpcion('base matematica', total_base_matematica)
-    actualizaVotosOpcion('aplicaciones', total_aplicaciones)
-
-    mail = request.cookies.get('email_user')
-    actualizaEstadoVotante(mail)
-
-
-'''
