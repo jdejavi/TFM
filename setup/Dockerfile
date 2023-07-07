@@ -12,7 +12,7 @@ RUN apt update && \
     apt install -y build-essential && \
     apt install -y cmake && \
     apt install -y git && \
-    pip3 install flask Pyfhel phe && \
+    pip3 install flask phe && \
     pip3 install pymysql && \
     pip3 install cryptography && \
     apt clean && \
